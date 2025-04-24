@@ -28,4 +28,4 @@ app.register_blueprint(preferences_bp, url_prefix='/preferences')
 app.register_blueprint(routines_bp, url_prefix='/routines')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000) 
+    app.run(host='0.0.0.0', port=5000) 
