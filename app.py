@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+# from flask_cors import CORS
 
 from routes.pickandplace.create_gcode_routes import gcode_bp
 from routes.pickandplace.deck_routes import deck_bp
@@ -9,7 +9,7 @@ from routes.pickandplace.routines_routes import routines_bp
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+# CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/', methods=['GET'])
 def index():
@@ -28,4 +28,4 @@ app.register_blueprint(preferences_bp, url_prefix='/preferences')
 app.register_blueprint(routines_bp, url_prefix='/routines')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000) 
+    app.run(debug=True, port=5000) 
