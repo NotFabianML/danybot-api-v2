@@ -3,8 +3,8 @@
         "deck_id": 1,
         "name": "Main Storage Deck",
         "description": "Main storage deck for standard inventory",
-        "size_x": 4,
-        "size_y": 5,
+        "size_x": 5,
+        "size_y": 4,
         "total_positions": 20,
         "allowed_rack_types": [
             "standard",
@@ -18,8 +18,8 @@
             },
             {
                 "stand_number": 2,
-                "stand_location_X": 1.0,
-                "stand_location_Y": 2.0
+                "stand_location_X": 606.7,
+                "stand_location_Y": 27.0
             },
             {
                 "stand_number": 3,
@@ -68,8 +68,8 @@
             },
             {
                 "stand_number": 12,
-                "stand_location_X": 3.0,
-                "stand_location_Y": 2.0
+                "stand_location_X": 604.7,
+                "stand_location_Y": 213.0
             },
             {
                 "stand_number": 13,
@@ -103,8 +103,8 @@
             },
             {
                 "stand_number": 19,
-                "stand_location_X": 4.0,
-                "stand_location_Y": 4.0
+                "stand_location_X": 281.5,
+                "stand_location_Y": 305.2
             },
             {
                 "stand_number": 20,
