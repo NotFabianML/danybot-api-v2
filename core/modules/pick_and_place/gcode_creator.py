@@ -41,6 +41,9 @@ def do_a2b(pick, drop, rack_data, info_deck):
     #Velocidad Lenta
     gcode_set_low_speed(rack_data)
     
+    
+    gcode_pause(1800)
+    
     #Ir a destino
     gcode_goto_xy(drop, rack_data, info_deck)
     
