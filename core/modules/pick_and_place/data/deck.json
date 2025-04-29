@@ -13,103 +13,103 @@
         "coordinates": [
             {
                 "stand_number": 1,
-                "stand_location_X": 1.0,
-                "stand_location_Y": 1.0
+                "stand_location_X": 767.0,
+                "stand_location_Y": 21.0
             },
             {
                 "stand_number": 2,
-                "stand_location_X": 606.7,
-                "stand_location_Y": 27.0
+                "stand_location_X": 606.0,
+                "stand_location_Y": 22.0
             },
             {
                 "stand_number": 3,
-                "stand_location_X": 1.0,
-                "stand_location_Y": 3.0
+                "stand_location_X": 445.0,
+                "stand_location_Y": 21.0
             },
             {
                 "stand_number": 4,
-                "stand_location_X": 1.0,
-                "stand_location_Y": 4.0
+                "stand_location_X": 284.0,
+                "stand_location_Y": 23.0
             },
             {
                 "stand_number": 5,
-                "stand_location_X": 1.0,
-                "stand_location_Y": 5.0
+                "stand_location_X": 123.5,
+                "stand_location_Y": 21.0
             },
             {
                 "stand_number": 6,
-                "stand_location_X": 2.0,
-                "stand_location_Y": 1.0
+                "stand_location_X": 765.0,
+                "stand_location_Y": 113.0
             },
             {
                 "stand_number": 7,
-                "stand_location_X": 2.0,
-                "stand_location_Y": 2.0
+                "stand_location_X": 605.0,
+                "stand_location_Y": 116.0
             },
             {
                 "stand_number": 8,
-                "stand_location_X": 2.0,
-                "stand_location_Y": 3.0
+                "stand_location_X": 444.0,
+                "stand_location_Y": 115.0
             },
             {
                 "stand_number": 9,
-                "stand_location_X": 2.0,
-                "stand_location_Y": 4.0
+                "stand_location_X": 282.5,
+                "stand_location_Y": 114.5
             },
             {
                 "stand_number": 10,
-                "stand_location_X": 2.0,
-                "stand_location_Y": 5.0
+                "stand_location_X": 122.2,
+                "stand_location_Y": 113.0
             },
             {
                 "stand_number": 11,
-                "stand_location_X": 3.0,
-                "stand_location_Y": 1.0
+                "stand_location_X": 764.5,
+                "stand_location_Y": 205.0
             },
             {
                 "stand_number": 12,
-                "stand_location_X": 604.7,
-                "stand_location_Y": 213.0
+                "stand_location_X": 604.0,
+                "stand_location_Y": 208.0
             },
             {
                 "stand_number": 13,
-                "stand_location_X": 3.0,
-                "stand_location_Y": 3.0
+                "stand_location_X": 442.0,
+                "stand_location_Y": 208.0
             },
             {
                 "stand_number": 14,
-                "stand_location_X": 3.0,
-                "stand_location_Y": 4.0
+                "stand_location_X": 282,
+                "stand_location_Y": 208.0
             },
             {
                 "stand_number": 15,
-                "stand_location_X": 3.0,
-                "stand_location_Y": 5.0
+                "stand_location_X": 122.20,
+                "stand_location_Y": 206.0
             },
             {
                 "stand_number": 16,
-                "stand_location_X": 4.0,
-                "stand_location_Y": 1.0
+                "stand_location_X": 763.0,
+                "stand_location_Y": 300.0
             },
             {
                 "stand_number": 17,
-                "stand_location_X": 4.0,
-                "stand_location_Y": 2.0
+                "stand_location_X": 602.0,
+                "stand_location_Y": 301.0
             },
             {
                 "stand_number": 18,
-                "stand_location_X": 4.0,
-                "stand_location_Y": 3.0
+                "stand_location_X": 441.0,
+                "stand_location_Y": 301.0
             },
             {
                 "stand_number": 19,
-                "stand_location_X": 284.10,
-                "stand_location_Y": 305.0
+                "stand_location_X": 281.0,
+                "stand_location_Y": 300.5
             },
             {
                 "stand_number": 20,
-                "stand_location_X": 4.0,
-                "stand_location_Y": 5.0
+                "stand_location_X": 121.0,
+                "stand_location_Y": 300.0
             }
         ],
         "image_path": "/images/deck001.png"
