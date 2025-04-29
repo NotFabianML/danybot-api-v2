@@ -214,7 +214,7 @@ def gcode_goto_xy(route, rack_data, info_deck ):
     print("X: "+str(x))
     print("Y: "+str(y))
     #APPEND GCODE
-    append_gcode_file(f"G1 X{x} Y{y}")
+    append_gcode_file(f"G1 X{x} Y{y} ; {route}")
 
 #Mueve el Piker a una altura segura Sin el Vial
 def gcode_goto_z_empty(rack_data):
@@ -230,7 +230,7 @@ def gcode_goto_z_value(value):
 def gcode_goto_z_holding(rack_data):
     z = mm_z_piker_holding(rack_data)
 
-    append_gcode_file(f"G1 Z{z} F1500; Mueve el Piker con Vial a una altura segura")
+    append_gcode_file(f"G1 Z{z} F1500 ; Mueve el Piker con Vial a una altura segura")
 
 #Mover en Z al indice valor indicado
 def gcode_goto_z(z, speed):
@@ -240,7 +240,7 @@ def gcode_goto_z(z, speed):
 #Establece Establece la velocidad de avance  Lenta
 def gcode_set_low_speed(rack_data):
     speed = xy_holding_speed(rack_data)
-    append_gcode_file(f"G1 F{speed} ; Velicidad Lenta")
+    append_gcode_file(f"G1 F{speed} ; Velocidad Lenta")
 
 #Establece Establece la velocidad de avance a 150 mm/min
 def gcode_set_high_speed(rack_data):
@@ -274,7 +274,7 @@ def gcode_pause(time):
 
 #Funcion para agregar comentario al GCode
 def gcode_comment(text):
-    append_gcode_file(f";{text}")
+    append_gcode_file(f"; {text}")
 
 #Funcion para agregar espacios a Origen o Destino ej: 2A11  pasa a  2 A 11
 def insert_spaces_around_letters(s):
