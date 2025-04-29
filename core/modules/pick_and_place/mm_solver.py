@@ -151,7 +151,9 @@ def mm_x(st_number, position_x, rack_data, info_deck):
     result = st_value + (rack_data['vial_diameter']) * (int(position_x) - 1)
     print("st_value: {} + (rackdata: {} * px-1: {} = result: {})".format(st_value, rack_data['vial_diameter'], int(position_x)-1, result))
     #return int(st_value) + ((int(rack_data['vial_diameter']) + int(rack_data['rack_base_separator'])) * int(position_x)-1)
-    return st_value + (8.9) * (int(position_x) - 1)
+    # return st_value + (8.9) * (int(position_x) - 1)
+    spacing = rack_data['vial_diameter']
+    return st_value + spacing * (position_x - 1)
 
 #Recibe stand_number, position_y, rack_data para devolver position si es = a 1 o suma del diámetro del vial y el separador de base del rack y multiplica por espacios requeridos al resultado le suma la localizacion del stand
 def mm_y(st_number, position_y, rack_data, data):

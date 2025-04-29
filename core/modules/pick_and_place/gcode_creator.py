@@ -165,11 +165,19 @@ def extract_components(s):
 def get_rack_value(s): #Recibe texto en el formato --> 1A3 y devuelve 1 (Obtiene  # de Rack)
     return int(extract_components(s)[0])
 
-def get_x_value(s): #Recibe texto en el formato --> 1B3 y devuelve 2 (Obtiene  # de pocsición de Vial en X)
-    return int(extract_components(s)[2])
+# def get_x_value(s): #Recibe texto en el formato --> 1B3 y devuelve 2 (Obtiene  # de pocsición de Vial en X)
+#     return int(extract_components(s)[2])
 
-def get_y_value(s): #Recibe texto en el formato --> 1B3 y devuelve 3 (Obtiene  # de pocsición de Vial en Y)
+# def get_y_value(s): #Recibe texto en el formato --> 1B3 y devuelve 3 (Obtiene  # de pocsición de Vial en Y)
+#     return letter_to_value(extract_components(s)[1])
+
+def get_x_value(s):
+    # la letra es la columna X
     return letter_to_value(extract_components(s)[1])
+
+def get_y_value(s):
+    # el número final es la fila Y
+    return int(extract_components(s)[2])
 
 # Pruebas de las funciones
 """
