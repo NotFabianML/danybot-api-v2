@@ -38,11 +38,11 @@ def do_a2b(pick, drop, rack_data, info_deck):
     #(Piker / Levantar a Altura Segura con Vial)
     gcode_goto_z_holding(rack_data)
 
+    # Hacer pausa antes de mover el Piker a la posicion de Drop
+    gcode_pause(1800)
+    
     #Velocidad Lenta
     gcode_set_low_speed(rack_data)
-    
-    
-    gcode_pause(1800)
     
     #Ir a destino
     gcode_goto_xy(drop, rack_data, info_deck)
@@ -62,7 +62,6 @@ def do_a2b(pick, drop, rack_data, info_deck):
 
     #Ir a Altura Segura
     gcode_goto_z_empty(rack_data)
-
 
 
 
@@ -265,8 +264,9 @@ def gcode_end(rack_data):
     speed_z = z_empyt_speed(rack_data)
     speed_xy = xy_empyt_speed(rack_data)
 
-    gcode_goto_z(0, speed_z)
-    append_gcode_file(f"G1 X0 Y0 F{speed_xy}; Hacer home en ejes XY")
+    # gcode_goto_z(0, speed_z)
+    # append_gcode_file(f"G1 X0 Y0 F{speed_xy}; Hacer home en ejes XY")
+    append_gcode_file(f"G28 ; Hacer home en ejes XYZ")
 
 #Hacer Pause 
 def gcode_pause(time):
