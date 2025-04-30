@@ -1,6 +1,7 @@
 from .mm_solver  import *
 from datetime import datetime
 import os
+from .preferencestools import *
 
 #Funcion LOOP para movimiento de Viales
 def gcode_pick_and_drop_create(pick_and_drop_list, rack_data, info_deck):
@@ -163,15 +164,15 @@ def extract_components(s):
         raise ValueError("El formato del string no es válido")
 
 def get_rack_value(s): #Recibe texto en el formato --> 1A3 y devuelve 1 (Obtiene  # de Rack)
-    print(f"get_rack_value: {s} -> {(extract_components(s)[0])}")
+    # print(f"get_rack_value: {s} -> {(extract_components(s)[0])}")
     return int(extract_components(s)[0])
 
 def get_x_value(s): #Recibe texto en el formato --> 1B3 y devuelve 2 (Obtiene  # de pocsición de Vial en X)
-    print(f"get_x_value: {s} -> {(extract_components(s)[2])}")
+    # print(f"get_x_value: {s} -> {(extract_components(s)[2])}")
     return int(extract_components(s)[2])
 
 def get_y_value(s): #Recibe texto en el formato --> 1B3 y devuelve 3 (Obtiene  # de pocsición de Vial en Y)
-    print(f"get_y_value: {s} -> {(extract_components(s)[1])}")
+    # print(f"get_y_value: {s} -> {(extract_components(s)[1])}")
     return letter_to_value(extract_components(s)[1])
 
 # def get_x_value(s):
@@ -217,13 +218,29 @@ def get_y_value(texto):
     return posicion_y
 """
 #************************************************************************************************************************
+
+PRESET_COORDS_FILE = './data/preset_coords.json'
+preset_coords = json_load(PRESET_COORDS_FILE)
+    
 def gcode_goto_xy(route, rack_data, info_deck ):
     
-    x= mm_x(get_rack_value(route), get_x_value(route), rack_data, info_deck)
-    y= mm_y(get_rack_value(route), get_y_value(route), rack_data, info_deck)
+    # coords = preset_coords.get(route)
+    stand = get_rack_value(route)
+    print(f"Stand: {stand}")
+    slot_key = f"slot_{stand}"
+    print(f"Slot Key: {slot_key}")
+    coords = preset_coords.get(slot_key, {}).get(route)
+    print(f"Coords: {coords}")
+    
+    if coords:
+        x = coords['x']
+        y = coords['y']
+    else:
+        x= mm_x(get_rack_value(route), get_x_value(route), rack_data, info_deck)
+        y= mm_y(get_rack_value(route), get_y_value(route), rack_data, info_deck)
 
-    print("X: "+str(x))
-    print("Y: "+str(y))
+    # print("X: "+str(x))
+    # print("Y: "+str(y))
     #APPEND GCODE
     append_gcode_file(f"G1 X{x} Y{y} ; {route}")
 

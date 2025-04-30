@@ -1,10 +1,5 @@
 import json
 
-BASE_X       = 767.0
-STEP_X       = (667.0 - 767.0) / (12 - 1)  # = -9.090909...
-BASE_Y       = 21.0
-STEP_Y       = (84.0  - 21.0 ) / ( 8 - 1)  # = 9.0
-
 def load_data_from_json(json_file):
     """
     Carga los datos desde un archivo JSON a la variable data.
@@ -144,6 +139,10 @@ all_decks = get_all_decks(data)
 print("Lista completa de decks:", all_decks)
 """
 
+BASE_X       = 767.0
+STEP_X       = round((667.0 - 767.0) / (12 - 1),2)  # = -9.090909...
+BASE_Y       = 21.0
+STEP_Y       = (84.0  - 21.0 ) / ( 8 - 1)  # = 9.0
 
 #En eje X Calcula la suma del diámetro del vial y el separador de base del rack y multiplica por espacios requeridos al resultado le suma la localizacion del stand.
 def mm_x(st_number, position_x, rack_data, info_deck):
@@ -152,8 +151,8 @@ def mm_x(st_number, position_x, rack_data, info_deck):
     if position_x == 1:
         return st_value
     
-    result = st_value + (rack_data['vial_diameter']) * (int(position_x) - 1)
-    print("st_value: {} + (rackdata: {} * px-1: {} = result: {})".format(st_value, rack_data['vial_diameter'], int(position_x)-1, result))
+    # result = st_value + (rack_data['vial_diameter']) * (int(position_x) - 1)
+    # print("st_value: {} + (rackdata: {} * px-1: {} = result: {})".format(st_value, rack_data['vial_diameter'], int(position_x)-1, result))
     # return st_value - (8.9) * (int(position_x) - 1)
     MEASURED_STEP_X = 100 / (12 - 1) 
     
