@@ -1,5 +1,9 @@
 import json
 
+BASE_X       = 767.0
+STEP_X       = (667.0 - 767.0) / (12 - 1)  # = -9.090909...
+BASE_Y       = 21.0
+STEP_Y       = (84.0  - 21.0 ) / ( 8 - 1)  # = 9.0
 
 def load_data_from_json(json_file):
     """
@@ -150,10 +154,12 @@ def mm_x(st_number, position_x, rack_data, info_deck):
     
     result = st_value + (rack_data['vial_diameter']) * (int(position_x) - 1)
     print("st_value: {} + (rackdata: {} * px-1: {} = result: {})".format(st_value, rack_data['vial_diameter'], int(position_x)-1, result))
-    #return int(st_value) + ((int(rack_data['vial_diameter']) + int(rack_data['rack_base_separator'])) * int(position_x)-1)
-    # return st_value + (8.9) * (int(position_x) - 1)
-    spacing = rack_data['vial_diameter']
-    return st_value + spacing * (position_x - 1)
+    # return st_value - (8.9) * (int(position_x) - 1)
+    MEASURED_STEP_X = 100 / (12 - 1) 
+    
+    # return round(MEASURED_STEP_X,1) * (position_x-1) - st_value
+    return BASE_X + STEP_X * (position_x - 1)
+    
 
 #Recibe stand_number, position_y, rack_data para devolver position si es = a 1 o suma del diámetro del vial y el separador de base del rack y multiplica por espacios requeridos al resultado le suma la localizacion del stand
 def mm_y(st_number, position_y, rack_data, data):
@@ -161,9 +167,12 @@ def mm_y(st_number, position_y, rack_data, data):
     #print(f"------------------------------------>  " + {st_value})
     if position_y == 1:
         return st_value
-    #return int(st_value) + ((int(rack_data['vial_diameter']) + int(rack_data['rack_base_separator'])) * int(position_y)-1)
-    return st_value + (rack_data['vial_diameter'] * (int(position_y) - 1))
+    # return int(st_value) + ((int(rack_data['vial_diameter']) + int(rack_data['rack_base_separator'])) * int(position_y)-1)
+    # return st_value - (rack_data['vial_diameter'] * (int(position_y) - 1))
+    MEASURED_STEP_Y = 63  / ( 8 - 1)
+    # return st_value + MEASURED_STEP_Y * (position_y - 1)
 
+    return BASE_Y + STEP_Y * (position_y - 1)
 
     
 # Ejemplo de uso
